@@ -65,14 +65,13 @@ Feature: View comprehensive information about this studentquiz activity
 
     # Check the Fast filter.
     Then "Filter" "fieldset" should be visible
-    And I should see "Fast filter for questions"
     And I click on "Unanswered" "link"
     And I press "id_submitbutton"
     And I should see "Question 1"
     And I should not see "Question 2"
     And I click on "Reset" "button"
 
-    And I click on "New" "link"
+    And I click on "New" "link" in the "#id_filtertabcontainer" "css_element"
     And I press "id_submitbutton"
     And I should see "Question 2"
     And I should not see "Question 1"

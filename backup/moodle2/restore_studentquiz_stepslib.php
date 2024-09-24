@@ -332,6 +332,11 @@ class restore_studentquiz_activity_structure_step extends restore_questions_acti
         $data = (object) $data;
         $data->studentquizid = $this->get_mappingid('notification', $data->studentquizid);
 
+        if (json_decode($data->content) === null) {
+            // Older versions of StudentQuiz stored this data serialised. We no longer support that.
+            $data = json_encode(unserialize_object($data->content));
+        }
+
         $DB->insert_record('studentquiz_notification', $data);
     }
 

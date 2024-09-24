@@ -29,6 +29,7 @@ require_once(__DIR__ . '/../../../../lib/behat/behat_base.php');
 use mod_studentquiz\utils;
 use Behat\Mink\Exception\ExpectationException as ExpectationException;
 use Behat\Mink\Exception\ElementNotFoundException as ElementNotFoundException;
+use Behat\Gherkin\Node\TableNode as TableNode;
 
 /**
  * Steps definitions related to mod_studentquiz.
